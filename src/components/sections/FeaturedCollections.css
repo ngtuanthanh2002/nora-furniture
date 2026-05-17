@@ -1,0 +1,223 @@
+.collections {
+  background: var(--color-cream);
+}
+
+.collection-hero {
+  display: block;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  min-height: 400px;
+}
+
+.collection-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.collection-hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collection-hero:hover .collection-hero__media img {
+  transform: scale(1.03);
+}
+
+.collection-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(15, 12, 10, 0.88) 0%,
+    rgba(15, 12, 10, 0.25) 55%,
+    transparent 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.collection-hero:hover .collection-hero__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(15, 12, 10, 0.92) 0%,
+    rgba(15, 12, 10, 0.35) 60%,
+    transparent 100%
+  );
+}
+
+.collection-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 400px;
+  padding: clamp(2rem, 4vw, 3rem);
+  color: var(--color-white);
+}
+
+.collection-hero__tag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 0.75rem;
+}
+
+.collection-hero__content h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.collection-hero__content p {
+  font-size: 0.9375rem;
+  opacity: 0.9;
+  max-width: 440px;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.collection-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-wood-dark);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  width: fit-content;
+  transition: background 0.3s ease, gap 0.3s ease;
+}
+
+.collection-hero:hover .collection-hero__cta {
+  background: var(--color-champagne);
+  color: var(--color-white);
+  gap: 0.75rem;
+}
+
+.collections__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.collection-tile {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-white);
+  border: 1px solid var(--color-sand);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.collection-tile:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.collection-tile__media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-beige);
+}
+
+.collection-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.collection-tile:hover .collection-tile__media img {
+  transform: scale(1.05);
+}
+
+.collection-tile__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 12, 10, 0.35);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.collection-tile:hover .collection-tile__overlay {
+  opacity: 1;
+}
+
+.collection-tile__hover-cta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateY(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-wood-dark);
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  white-space: nowrap;
+}
+
+.collection-tile:hover .collection-tile__hover-cta {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.collection-tile__content {
+  padding: 1.25rem 1.5rem 1.5rem;
+  text-align: left;
+}
+
+.collection-tile__content h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.375rem;
+}
+
+.collection-tile__content p {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+@media (min-width: 640px) {
+  .collections__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .collection-hero {
+    min-height: 460px;
+  }
+
+  .collection-hero__content {
+    min-height: 460px;
+  }
+
+  .collections__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .collection-tile__media {
+    aspect-ratio: 3 / 4;
+  }
+}
