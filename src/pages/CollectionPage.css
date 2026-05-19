@@ -57,10 +57,109 @@
   border-bottom: 1px solid var(--color-accent);
 }
 
-.collection-page__products h2 {
+.collection-page__lead {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.collection-page__meta {
+  font-size: 0.8125rem;
+  color: var(--color-wood);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.collection-page__features,
+.collection-page__process {
+  margin-bottom: 2.5rem;
+  padding: 1.75rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-sand);
+  border-radius: var(--radius-lg);
+}
+
+.collection-page__features h2,
+.collection-page__process h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.collection-page__features ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.625rem;
+  list-style: none;
+}
+
+.collection-page__features li {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.collection-page__features svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.collection-page__process ol {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.collection-page__process li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 0;
+}
+
+.collection-page__process strong {
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.collection-page__process span {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.collection-page__products-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.collection-page__products-head h2 {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+}
+
+.collection-page__products-head a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-wood-dark);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .collection-page__features ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collection-page__process ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .collection-page__grid {

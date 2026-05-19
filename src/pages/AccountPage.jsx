@@ -25,6 +25,10 @@ export function AccountPage() {
       <div className="container">
         <PageBreadcrumb items={[{ label: 'Tài khoản' }]} />
         <h1 className="account-page__title">Xin chào, Khách Nora</h1>
+        <p className="account-page__intro">
+          Quản lý đơn hàng, địa chỉ giao hàng và danh sách yêu thích. Liên hệ hotline{' '}
+          <strong>1900 1234</strong> nếu cần hỗ trợ đổi trả hoặc bảo hành.
+        </p>
 
         <div className="account-page__layout">
           <nav className="account-nav" aria-label="Menu tài khoản">

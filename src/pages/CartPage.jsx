@@ -15,6 +15,10 @@ export function CartPage() {
       <div className="container">
         <PageBreadcrumb items={[{ label: 'Giỏ hàng' }]} />
         <h1 className="cart-page__title">Giỏ hàng</h1>
+        <p className="cart-page__intro">
+          Kiểm tra sản phẩm, số lượng và tổng tạm tính. Sau khi xác nhận, đội Nora sẽ liên hệ tư vấn báo giá
+          chi tiết và lịch giao lắp đặt.
+        </p>
 
         {itemCount === 0 ? (
           <div className="cart-page__empty">
@@ -88,6 +92,11 @@ export function CartPage() {
               <button type="button" className="cart-summary__clear" onClick={clearCart}>
                 Xóa toàn bộ giỏ
               </button>
+              <ul className="cart-summary__perks">
+                <li>Miễn phí giao nội thành TP.HCM</li>
+                <li>Lắp đặt tận nơi lần đầu</li>
+                <li>Hỗ trợ trả góp 0% qua ngân hàng</li>
+              </ul>
             </aside>
           </div>
         )}
